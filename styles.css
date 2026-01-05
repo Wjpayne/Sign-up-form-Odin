@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: Arial, sans-serif;
+  height: 100%;
+  color: #333;
+}
+
+/* =======================
+   LAYOUT
+   ======================= */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left image area */
+.side-image {
+  flex: 3;
+
+  position: relative;
+}
+
+.side-image .overlay {
+  background-color: rgba(0,0,0,0.3);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.side-image .logo {
+  max-width: 200px;
+  margin: 2rem;
+  filter: drop-shadow(0 0 4px #000);
+}
+
+/* Right form area */
+.form-section {
+  flex: 4;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* =======================
+   TYPOGRAPHY & SPACING
+   ======================= */
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* =======================
+   FORM STYLES
+   ======================= */
+.signup-form .field-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.signup-form .field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-form label {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.5px;
+}
+
+.signup-form input {
+  padding: 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.signup-form input:focus {
+  border-color: #6196a9;
+  outline: none;
+  box-shadow: 0 0 3px rgba(97,150,169, 0.5);
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #596D48;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.btn-submit:hover {
+  background-color: #4e5e3e;
+}
+
+.login-text {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.login-text a {
+  color: #596D48;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
