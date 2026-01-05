@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
   font-family: Arial, sans-serif;
   height: 100%;
   color: #333;
@@ -21,13 +22,13 @@ body, html {
 /* Left image area */
 .side-image {
   flex: 3;
-  background: url('https://guide.trustedtours.com/wp-content/uploads/2023/07/nashville-1.jpeg')
+  background: url("https://guide.trustedtours.com/wp-content/uploads/2023/07/nashville-1.jpeg")
     center/cover no-repeat;
   position: relative;
 }
 
 .side-image .overlay {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0, 0, 0, 0.3);
   width: 100%;
   height: 100%;
   display: flex;
@@ -100,19 +101,23 @@ h3 {
   padding: 0.6rem;
   border: 1px solid #ddd;
   border-radius: 4px;
-  font-size: 1rem;
 }
 
 .signup-form input:focus {
   border-color: #6196a9;
   outline: none;
-  box-shadow: 0 0 3px rgba(97,150,169, 0.5);
+  box-shadow: 0 0 3px rgba(97, 150, 169, 0.5);
 }
+
+input:user-invalid {
+  border-color: red;
+}
+
 
 .btn-submit {
   width: 100%;
   padding: 0.8rem;
-  background-color: #596D48;
+  background-color: #5019af;
   color: #fff;
   font-size: 1.1rem;
   border: none;
@@ -122,7 +127,7 @@ h3 {
 }
 
 .btn-submit:hover {
-  background-color: #4e5e3e;
+  background-color: #2d046e;
 }
 
 .login-text {
@@ -131,7 +136,7 @@ h3 {
 }
 
 .login-text a {
-  color: #596D48;
+  color: #2d046e;
   text-decoration: none;
   font-weight: bold;
 }
