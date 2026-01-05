@@ -21,7 +21,8 @@ body, html {
 /* Left image area */
 .side-image {
   flex: 3;
-
+  background: url('https://guide.trustedtours.com/wp-content/uploads/2023/07/nashville-1.jpeg')
+    center/cover no-repeat;
   position: relative;
 }
 

@@ -11,20 +11,17 @@
     <main class="container">
       <!-- SideBar -->
 
-      <section class="side-image">
-        <div class="overlay">
-          <img src="nashville-1.jpeg" alt="Nashville skyline" class="logo" />
-        </div>
-      </section>
+      <section class="side-image"></section>
 
       <!-- Form Section -->
       <section class="form-section">
         <div class="form-wrapper">
+          <h1>Nashville Homeless Resources</h1>
           <h2>Sign up for our newsletter</h2>
           <p>
-          Stay update with the latest news, articles, and resources, sent to your inbox weekly.
+            Stay update with the latest news, articles, and resources, sent to
+            your inbox weekly.
           </p>
-          
 
           <h3>Sign up now!</h3>
 
@@ -47,7 +44,14 @@
               </div>
               <div class="field">
                 <label for="phone">PHONE NUMBER</label>
-                <input type="tel" id="phone" name="phone" />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  pattern="[0-9]*"
+                  inputmode="numeric"
+                  required
+                />
               </div>
             </div>
 
