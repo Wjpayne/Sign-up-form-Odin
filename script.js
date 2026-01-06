@@ -1,54 +1,54 @@
 const form = document.getElementById("signup-form");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirm-password");
+const phone = document.getElementById("phone");
 const errorMessage = document.getElementById("password-error");
 
-// Safety check (prevents runtime errors)
-if (!form || !password || !confirmPassword || !errorMessage) {
-  console.warn("Signup form elements not found");
-  return;
+if (!form || !password || !confirmPassword || !phone || !errorMessage) {
+  throw new Error("Required form elements not found");
 }
 
-function setValidationState(isValid, message = "") {
-  confirmPassword.classList.toggle("error", !isValid);
-  confirmPassword.classList.toggle("success", isValid);
-  confirmPassword.setAttribute("aria-invalid", String(!isValid));
+function showError(message, field) {
   errorMessage.textContent = message;
+  field.focus();
 }
 
-function validatePasswords() {
-  const pwd = password.value.trim();
-  const confirmPwd = confirmPassword.value.trim();
+function clearError() {
+  errorMessage.textContent = "";
+}
 
-  // No validation until user starts typing
-  if (!confirmPwd) {
-    setValidationState(true, "");
+function isValidPhone(value) {
+  // Remove non-digits (handles spaces, dashes, parentheses)
+  const digits = value.replace(/\D/g, "");
+  return digits.length === 10;
+}
+
+function validateOnSubmit() {
+  // Phone validation
+  if (!isValidPhone(phone.value)) {
+    showError("Phone number must be exactly 10 digits", phone);
     return false;
   }
 
-  // Optional: enforce minimum length consistency
-  if (pwd.length < 8) {
-    setValidationState(false, "Password must be at least 8 characters");
+  // Password length
+  if (password.value.length < 8) {
+    showError("Password must be at least 8 characters long", password);
     return false;
   }
 
-  if (pwd !== confirmPwd) {
-    setValidationState(false, "Passwords do not match");
+  // Password match
+  if (password.value !== confirmPassword.value) {
+    showError("Passwords do not match", confirmPassword);
     return false;
   }
 
-  setValidationState(true);
+  clearError();
   return true;
 }
 
-// Live validation
-password.addEventListener("input", validatePasswords);
-confirmPassword.addEventListener("input", validatePasswords);
-
-// Block form submission if invalid
 form.addEventListener("submit", (e) => {
-  if (!validatePasswords()) {
+  if (!validateOnSubmit()) {
     e.preventDefault();
-    confirmPassword.focus();
+    e.stopImmediatePropagation();
   }
 });

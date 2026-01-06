@@ -10,10 +10,7 @@
   <body>
     <main class="container">
       <!-- Sidebar Image -->
-      <section
-        class="side-image"
-        aria-hidden="true"
-      ></section>
+      <section class="side-image" aria-hidden="true"></section>
 
       <!-- Form Section -->
       <section class="form-section">
@@ -73,9 +70,8 @@
                   id="phone"
                   name="phone"
                   inputmode="numeric"
-                  autocomplete="tel"
-                  pattern="[0-9]{10}"
                   placeholder="1234567890"
+                  maxlength="14"
                   required
                 />
               </div>
@@ -113,9 +109,7 @@
               </div>
             </div>
 
-            <button type="submit" class="btn-submit">
-              Create Account
-            </button>
+            <button type="submit" class="btn-submit">Create Account</button>
           </form>
 
           <p class="login-text">
