@@ -3,53 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up Form</title>
+    <title>Sign Up | Nashville Homeless Resources</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <!-- Container -->
-    <main class="container">
-      <!-- SideBar -->
 
-      <section class="side-image"></section>
+  <body>
+    <main class="container">
+      <!-- Sidebar Image -->
+      <section
+        class="side-image"
+        aria-hidden="true"
+      ></section>
 
       <!-- Form Section -->
       <section class="form-section">
         <div class="form-wrapper">
-          <h1>Nashville Homeless Resources</h1>
-          <h2>Sign up for our newsletter</h2>
-          <p>
-            Stay update with the latest news, articles, and resources, sent to
-            your inbox weekly.
-          </p>
+          <header>
+            <h1>Nashville Homeless Resources</h1>
+            <h2>Sign up for our newsletter</h2>
+            <p>
+              Stay updated with the latest news, articles, and resources,
+              delivered to your inbox weekly.
+            </p>
+          </header>
 
           <h3>Sign up now!</h3>
 
-          <form class="signup-form" id = "signup-form">
+          <form class="signup-form" id="signup-form" novalidate>
             <div class="field-group">
               <div class="field">
-                <label for="first-name">FIRST NAME</label>
-                <input type="text" id="first-name" name="first-name" required />
+                <label for="first-name">First Name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  name="firstName"
+                  autocomplete="given-name"
+                  required
+                />
               </div>
+
               <div class="field">
-                <label for="last-name">LAST NAME</label>
-                <input type="text" id="last-name" name="last-name" required />
+                <label for="last-name">Last Name</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  name="lastName"
+                  autocomplete="family-name"
+                  required
+                />
               </div>
             </div>
 
             <div class="field-group">
               <div class="field">
-                <label for="email">EMAIL</label>
-                <input type="email" id="email" name="email" required />
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  autocomplete="email"
+                  required
+                />
               </div>
+
               <div class="field">
-                <label for="phone">PHONE NUMBER</label>
+                <label for="phone">Phone Number</label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
-                  pattern="[0-9]*"
                   inputmode="numeric"
+                  autocomplete="tel"
+                  pattern="[0-9]{10}"
+                  placeholder="1234567890"
                   required
                 />
               </div>
@@ -57,22 +83,39 @@
 
             <div class="field-group">
               <div class="field">
-                <label for="password">PASSWORD</label>
-                <input type="password" id="password" name="password" required />
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  autocomplete="new-password"
+                  minlength="8"
+                  required
+                />
               </div>
+
               <div class="field">
-                <label for="confirm-password">CONFIRM PASSWORD</label>
+                <label for="confirm-password">Confirm Password</label>
                 <input
                   type="password"
                   id="confirm-password"
-                  name="confirm-password"
+                  name="confirmPassword"
+                  autocomplete="new-password"
+                  minlength="8"
+                  aria-describedby="password-error"
                   required
                 />
-                <span class="error-message" id="password-error"></span>
+                <span
+                  class="error-message"
+                  id="password-error"
+                  aria-live="polite"
+                ></span>
               </div>
             </div>
 
-            <button type="submit" class="btn-submit">Create Account</button>
+            <button type="submit" class="btn-submit">
+              Create Account
+            </button>
           </form>
 
           <p class="login-text">
@@ -81,8 +124,6 @@
         </div>
       </section>
     </main>
-
-    
 
     <script src="script.js" defer></script>
   </body>
